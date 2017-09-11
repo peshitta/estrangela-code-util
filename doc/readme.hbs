@@ -26,7 +26,9 @@ libraries and applications
 
 [Peshitta App](https://peshitta.github.io)
 
-[Beth Mardutho](https://sedra.bethmardutho.org/about/fonts)
+[Estrangela Font Encoding Chart](http://www.peshitta.org/initial/standard.html)
+
+[Estrangela ASCII font](http://www.peshitta.org/initial/software.html)
 
 [CAL](http://cal1.cn.huc.edu/searching/fullbrowser.html)
 
