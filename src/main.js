@@ -4,7 +4,7 @@
  * @constant
  * @type { string[] }
 */
-export const consonants = [
+export const consonants = Object.freeze([
   '0',
 
   'b',
@@ -64,21 +64,32 @@ export const consonants = [
 
   'f',
   'F'
-];
+]);
 
 /**
  * Estrangela vowels
  * @constant
  * @type { string[] }
 */
-export const vowels = ['e', 'E', 'a', 'A', 'o', 'O', ';', 'i', 'I', 'u'];
+export const vowels = Object.freeze([
+  'e',
+  'E',
+  'a',
+  'A',
+  'o',
+  'O',
+  ';',
+  'i',
+  'I',
+  'u'
+]);
 
 /**
  * Estrangela diacretics
  * @constant
  * @type { string[] }
 */
-export const diacretics = [
+export const diacretics = Object.freeze([
   '2', // sedra/cal ' - Qushaya
 
   '3', // sedra/cal , - Rukkakha
@@ -95,14 +106,14 @@ export const diacretics = [
   '1',
 
   '8'
-];
+]);
 
 /**
  * Estrangela punctuation
  * @constant
  * @type { string[] }
 */
-export const punctuation = ['-', '_', '.', '?'];
+export const punctuation = Object.freeze(['-', '_', '.', '?']);
 
 /**
  * Is character c an Estrangela consonant
