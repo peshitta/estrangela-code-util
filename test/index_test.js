@@ -3,7 +3,7 @@ import * as sut from '../build/estrangela-code-util';
 
 describe('Estrangela', () => {
   describe('Util', () => {
-    it('Is Estrangela Consonant', () => {
+    it('Is Consonant', () => {
       test.ok(sut.isConsonant('0'), '0 isConsonant');
       test.ok(sut.isConsonant('9'), '9 isConsonant');
       test.ok(sut.isConsonant('b'), 'b isConsonant');
@@ -15,7 +15,7 @@ describe('Estrangela', () => {
       test.ok(!sut.isConsonant(')'), '! ) isConsonant');
       test.ok(!sut.isConsonant('u'), '! u isConsonant');
     });
-    it('Is Estrangela vowel', () => {
+    it('Is Vowel', () => {
       test.ok(sut.isVowel('a'), 'a isVowel');
       test.ok(sut.isVowel('A'), 'A isVowel');
       test.ok(sut.isVowel('o'), 'o isVowel');
@@ -30,7 +30,7 @@ describe('Estrangela', () => {
       test.ok(!sut.isVowel(':'), ': isVowel');
       test.ok(!sut.isVowel(''), "! '' isVowel");
     });
-    it('Is Estrangela Diacretic', () => {
+    it('Is Diacretic', () => {
       test.ok(sut.isDiacretic('`'), '` isDiacretic');
       test.ok(sut.isDiacretic('1'), '1 isDiacretic');
       test.ok(sut.isDiacretic('2'), '2 isDiacretic');
@@ -49,7 +49,7 @@ describe('Estrangela', () => {
       test.ok(!sut.isDiacretic(''), "! '' isDiacretic");
       test.ok(!sut.isDiacretic(' '), "! ' ' isDiacretic");
     });
-    it('Is Estrangela Punctuation', () => {
+    it('Is Punctuation', () => {
       test.ok(sut.isPunctuation('.'), '. isPunctuation');
       test.ok(sut.isPunctuation('?'), '? isPunctuation');
       test.ok(sut.isPunctuation('-'), '- isPunctuation');
@@ -61,6 +61,24 @@ describe('Estrangela', () => {
       test.ok(!sut.isPunctuation('`'), '! ` isPunctuation');
       test.ok(!sut.isPunctuation('~'), '! ~ isPunctuation');
       test.ok(!sut.isPunctuation(','), '! , isPunctuation');
+    });
+    it('Is Left Unconnected Consonant', () => {
+      test.ok(sut.isUnconnected('r'), 'r isUnconnected');
+      test.ok(sut.isUnconnected('z'), 'z isUnconnected');
+      test.ok(sut.isUnconnected('c'), 'c isUnconnected');
+      test.ok(sut.isUnconnected('t'), 't isUnconnected');
+      test.ok(sut.isUnconnected('h'), 'h isUnconnected');
+      test.ok(sut.isUnconnected('0'), '0 isUnconnected');
+      test.ok(sut.isUnconnected('d'), 'd isUnconnected');
+      test.ok(sut.isUnconnected('w'), 'w isUnconnected');
+
+      test.ok(!sut.isUnconnected('='), '! = isUnconnected');
+      test.ok(!sut.isUnconnected('9'), '! 9 isUnconnected');
+      test.ok(!sut.isUnconnected('x'), '! x isUnconnected');
+      test.ok(!sut.isUnconnected('4'), '! 4 isUnconnected');
+      test.ok(!sut.isUnconnected('`'), '! ` isUnconnected');
+      test.ok(!sut.isUnconnected('~'), '! ~ isUnconnected');
+      test.ok(!sut.isUnconnected(','), '! , isUnconnected');
     });
   });
 });

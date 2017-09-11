@@ -116,6 +116,22 @@ export const diacretics = Object.freeze([
 export const punctuation = Object.freeze(['-', '_', '.', '?']);
 
 /**
+ * Estrangela consonants unconnected on the left
+ * @constant
+ * @type { string[] }
+ */
+export const unconnected = Object.freeze([
+  '0',
+  'd',
+  'h',
+  'w',
+  'z',
+  'c',
+  'r',
+  't'
+]);
+
+/**
  * Is character c an Estrangela consonant
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela consonant
@@ -142,3 +158,10 @@ export const isDiacretic = c => diacretics.indexOf(c) > -1;
  * @returns { boolean } true if c is Estrangela punctuation
  */
 export const isPunctuation = c => punctuation.indexOf(c) > -1;
+
+/**
+ * Is character c an unconnected on the left Estrangela consonant
+ * @param { string } c input character
+ * @returns { boolean } true if c is unconnected on the left consonant
+ */
+export const isUnconnected = c => unconnected.indexOf(c) > -1;
