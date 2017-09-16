@@ -1,119 +1,85 @@
 /** @module estrangela */
+
 /**
- * Estrangela consonants
+ * Estrangela base consonants - the 22 aramaic consonants
  * @constant
  * @type { string[] }
 */
-export const consonants = Object.freeze([
+export const baseConsonants = Object.freeze([
+  // abgad
   '0',
-
   'b',
-  'B',
-
   'g',
-  'G',
-
   'd',
+
+  // hawaz
   'h',
   'w',
   'z',
 
+  // ḥaṭy
   'x',
-  'X',
-
   '=',
-  '+',
-
   'y',
-  'Y',
 
+  // kalman
   'k',
-  'K',
-  '<',
-
   'l',
-  'L',
-
   'm',
-  'M',
-
   'n',
-  'N',
-  'J',
 
+  // saʿpac
   's',
-  'S',
-
   '9',
-  '(',
-
   'p',
-  'P',
-
   'c',
 
+  // qarshat
   'q',
-  'Q',
-
   'r',
-
   '4',
-  '$',
-
-  't',
-
-  'f',
-  'F'
+  't'
 ]);
 
 /**
- * Estrangela vowels
+ * Estrangela final connected modified consonants
  * @constant
  * @type { string[] }
 */
-export const vowels = Object.freeze([
-  'e',
-  'E',
-  'a',
-  'A',
-  'o',
-  'O',
-  ';',
-  'i',
-  'I',
-  'u'
+export const finalConnected = Object.freeze([
+  'B',
+  'G',
+
+  'X',
+  '+',
+  'Y',
+
+  'K',
+  'L',
+  'M',
+  'N',
+
+  'S',
+  '(',
+  'P',
+
+  'Q',
+  '$'
 ]);
 
 /**
- * Estrangela diacretics
+ * Estrangela final non-connected modified consonants
  * @constant
  * @type { string[] }
 */
-export const diacretics = Object.freeze([
-  '2', // sedra/cal ' - Qushaya
-
-  '3', // sedra/cal , - Rukkakha
-  '#',
-
-  '5', // sedra/cal _ - Line under
-  '%',
-
-  '6', // sedra/cal * - Seyame
-  '^',
-
-  '`',
-
-  '1',
-
-  '8'
-]);
+export const finalNonConnected = Object.freeze(['<', 'J']);
 
 /**
- * Estrangela punctuation
+ * Estrangela 2 ligatures
  * @constant
  * @type { string[] }
 */
-export const punctuation = Object.freeze(['-', '_', '.', '?']);
+export const ligatures = Object.freeze(['f', 'F']);
 
 /**
  * Estrangela consonants unconnected on the left
@@ -132,25 +98,135 @@ export const unconnected = Object.freeze([
 ]);
 
 /**
+ * Estrangela common vowels - common to both eastern and western
+ * @constant
+ * @type { string[] }
+*/
+export const commonVowels = Object.freeze([
+  'e', // a
+  'a', // o
+  'o', // e
+  ';' // i u
+]);
+
+/**
+ * Estrangela eastern only vowels
+ * @constant
+ * @type { string[] }
+*/
+export const easternVowels = Object.freeze([
+  'i', // E
+  'u' // O
+]);
+
+/**
+ * Estrangela shifted vowels (SHIFT key on)
+ * @constant
+ * @type { string[] }
+*/
+export const shiftedVowels = Object.freeze([
+  'E', // a
+  'A', // o
+  'O', // e
+  'I' // E
+]);
+
+/**
+ * Estrangela vowels (both common and eastern) - excluding shifted
+ * @constant
+ * @type { string[] }
+*/
+export const baseVowels = Object.freeze(commonVowels.concat(easternVowels));
+
+/**
+ * Estrangela base/common diacritics (both western and eastern)
+ * @constant
+ * @type { string[] }
+*/
+export const commonDiacritics = Object.freeze([
+  '2', // sedra/cal ' - Qushaya
+  '3', // sedra/cal , - Rukkakha
+  '5', // sedra/cal _ - Line under
+  '6' // sedra/cal * - Seyame
+]);
+
+/**
+ * Estrangela eastern specific diacritics
+ * @constant
+ * @type { string[] }
+*/
+export const easternDiacritics = Object.freeze(['`', '1', '8']);
+
+/**
+ * Estrangela diacritics - excluding shifted
+ * @constant
+ * @type { string[] }
+*/
+export const baseDiacritics = Object.freeze(
+  commonDiacritics.concat(easternDiacritics)
+);
+
+/**
+ * Estrangela shifted diacritics
+ * @constant
+ * @type { string[] }
+*/
+export const shiftedDiacritics = Object.freeze([
+  '#', // sedra/cal , - Rukkakha
+  '%', // sedra/cal _ - Line under
+  '^' // sedra/cal * - Seyame
+]);
+
+/**
+ * Estrangela punctuation
+ * @constant
+ * @type { string[] }
+*/
+export const punctuation = Object.freeze(['-', '_', '.', '?']);
+
+/**
+ * @private
+ * All Estrangela font consonants
+ */
+const allConsonants = Object.freeze(
+  baseConsonants
+    .concat(finalConnected)
+    .concat(finalNonConnected)
+    .concat(ligatures)
+);
+
+/**
  * Is character c an Estrangela consonant
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela consonant
  */
-export const isConsonant = c => consonants.indexOf(c) > -1;
+export const isConsonant = c => allConsonants.indexOf(c) > -1;
+
+/**
+ * @private
+ * All Estrangela vowels
+ */
+const allVowels = Object.freeze(baseVowels.concat(shiftedVowels));
 
 /**
  * Is character c an Estrangela vowel
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela vowel
  */
-export const isVowel = c => vowels.indexOf(c) > -1;
+export const isVowel = c => allVowels.indexOf(c) > -1;
 
 /**
- * Is character c an Estrangela diacretic
- * @param { string } c input character
- * @returns { boolean } true if c is Estrangela diacretic
+ * @private
+ * All Estrangela diacritics
  */
-export const isDiacretic = c => diacretics.indexOf(c) > -1;
+const allDiacritics = Object.freeze(baseDiacritics.concat(shiftedDiacritics));
+
+/**
+ * Is character c an Estrangela diacritic
+ * @param { string } c input character
+ * @returns { boolean } true if c is Estrangela diacritic
+ */
+export const isDiacritic = c => allDiacritics.indexOf(c) > -1;
 
 /**
  * Is character c an Estrangela punctuation
@@ -165,3 +241,132 @@ export const isPunctuation = c => punctuation.indexOf(c) > -1;
  * @returns { boolean } true if c is unconnected on the left consonant
  */
 export const isUnconnected = c => unconnected.indexOf(c) > -1;
+
+/**
+ * Map between regular and final ligature
+ * @private
+ */
+const ligatureMap = Object.freeze(
+  Object.create(null, {
+    l: { value: 'f' },
+    t: { value: 'F' }
+  })
+);
+
+/**
+ * Map between regular and final connected
+ * @private
+ */
+const connectedMap = Object.freeze(
+  Object.create(null, {
+    b: { value: 'B' },
+    g: { value: 'G' },
+
+    x: { value: 'X' },
+    '=': { value: '+' },
+    y: { value: 'Y' },
+
+    k: { value: 'K' },
+    l: { value: 'L' },
+    m: { value: 'M' },
+    n: { value: 'N' },
+
+    s: { value: 'S' },
+    9: { value: '(' },
+    p: { value: 'P' },
+
+    q: { value: 'Q' },
+    4: { value: '$' }
+  })
+);
+
+/**
+ * Map between final connected and final non connected
+ * @private
+ */
+const nonConnectedMap = Object.freeze(
+  Object.create(null, {
+    K: { value: '<' },
+    N: { value: 'J' }
+  })
+);
+
+/**
+ * Prototype for object managing final consonant setting
+ * @private
+ */
+const finalProto = Object.create(null, {
+  isAleph: { value: c => c === '0' },
+  ligature: { value: c => ligatureMap[c] },
+  connected: { value: c => connectedMap[c] },
+  nonConnected: { value: c => nonConnectedMap[c] }
+});
+
+/**
+ * Fix end consonant for a word in base Estrangela font
+ * @param { string } word input word
+ * @returns { string } word with end consonant corrected
+ */
+export const endify = word => {
+  if (!word) {
+    return word;
+  }
+
+  const stack = [];
+  let si = -1; // final consonant index in the stack
+  let wi = -1; // index in the word of the final consonant
+  let alephState = false;
+  let nonConnectedState = false;
+  const final = Object.create(finalProto);
+  let i = word.length;
+  while (--i >= 0) {
+    const c = word.charAt(i);
+    if (isConsonant(c)) {
+      if (nonConnectedState) {
+        const nc = final.nonConnected(stack[si]);
+        if (nc) {
+          stack[si] = nc;
+        }
+        break;
+      } else if (alephState) {
+        const lc = final.ligature(c);
+        if (lc) {
+          wi = i;
+          stack.push(lc);
+        }
+        break;
+      } else {
+        const fc = final.connected(c);
+        if (fc) {
+          wi = i;
+          if (i === 0) {
+            stack.push(final.nonConnected(fc) || fc); // standalone
+            break;
+          } else {
+            si = stack.length;
+            stack.push(fc);
+            nonConnectedState = !!final.nonConnected(fc);
+            if (!nonConnectedState) {
+              break;
+            }
+          }
+        } else {
+          alephState = final.isAleph(c);
+          if (!alephState || i === 0) {
+            break; // not a final customized consonant, no change, get out
+          }
+        }
+      }
+    } else if (!nonConnectedState) {
+      stack.push(c);
+    }
+  }
+  if (wi >= 0) {
+    let changedWord = wi > 0 ? word.substring(0, wi) : '';
+    for (let j = stack.length - 1; j >= 0; --j) {
+      changedWord += stack[j];
+    }
+    return changedWord;
+  }
+  return word;
+};

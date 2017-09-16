@@ -5,10 +5,11 @@ import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
 const isProduction = process.env.BUILD === 'production';
+const isDev = process.env.BUILD === 'dev';
 const banner = isProduction
   ? '/**\n' +
     '* @file Utility library for Estrangela ASCII code font\n' +
-    '* @version 1.0.0\n' +
+    '* @version 1.0.1\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -41,7 +42,7 @@ const external = Object.keys(pkg.dependencies);
 const input = 'src/main.js';
 const name = 'estrangelaCodeUtil';
 const format = 'umd';
-const sourcemap = isProduction ? false : 'inline';
+const sourcemap = !isProduction;
 const plugins = [babel(babelrc({ path: 'babelrc.json' }))];
 
 // browser-friendly UMD build
@@ -87,7 +88,7 @@ if (isProduction) {
     name,
     banner
   });
-} else {
+} else if (!isDev) {
   targets[0].plugins.push(
     istanbul({
       exclude: ['test/**/*', 'node_modules/**/*']

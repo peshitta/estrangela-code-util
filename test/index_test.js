@@ -1,7 +1,138 @@
-import * as test from 'assert';
-import * as sut from '../build/estrangela-code-util';
+const test = require('assert');
+const sut = require('../build/estrangela-code-util');
 
 describe('Estrangela', () => {
+  describe('Endify', () => {
+    it('Standalone non-vocalized non-final', () => {
+      test.strictEqual(sut.endify('0'), '0', '0 endify');
+      test.strictEqual(sut.endify('w'), 'w', 'w endify');
+    });
+    it('Standalone non-vocalized final connected', () => {
+      test.strictEqual(sut.endify('b'), 'B', 'b endify');
+      test.strictEqual(sut.endify('g'), 'G', 'g endify');
+      test.strictEqual(sut.endify('='), '+', '= endify');
+    });
+    it('Standalone non-vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('n'), 'J', 'n endify');
+      test.strictEqual(sut.endify('k'), '<', 'n endify');
+    });
+    it('Standalone non-vocalized ligature', () => {
+      test.strictEqual(sut.endify('t0'), 'F', 'n endify');
+      test.strictEqual(sut.endify('l0'), 'f', 'n endify');
+    });
+
+    it('Standalone vocalized non-final', () => {
+      test.strictEqual(sut.endify('0e'), '0e', '0 endify');
+      test.strictEqual(sut.endify('wa'), 'wa', 'w endify');
+    });
+    it('Standalone vocalized final connected', () => {
+      test.strictEqual(sut.endify('bo'), 'Bo', 'b endify');
+      test.strictEqual(sut.endify('g;'), 'G;', 'g endify');
+      test.strictEqual(sut.endify('=i'), '+i', '= endify');
+    });
+    it('Standalone vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('nu'), 'Ju', 'n endify');
+      test.strictEqual(sut.endify('kA'), '<A', 'n endify');
+    });
+    it('Standalone vocalized ligature', () => {
+      test.strictEqual(sut.endify('t0o'), 'Fo', 'n endify');
+      test.strictEqual(sut.endify('l0u'), 'fu', 'n endify');
+    });
+
+    it('Standalone diacritic vocalized non-final', () => {
+      test.strictEqual(sut.endify('02e'), '02e', '0 endify');
+      test.strictEqual(sut.endify('w3a'), 'w3a', 'w endify');
+    });
+    it('Standalone diacritic vocalized final connected', () => {
+      test.strictEqual(sut.endify('b5o'), 'B5o', 'b endify');
+      test.strictEqual(sut.endify('g6;'), 'G6;', 'g endify');
+      test.strictEqual(sut.endify('=`i'), '+`i', '= endify');
+    });
+    it('Standalone diacritic vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('n1u'), 'J1u', 'n endify');
+      test.strictEqual(sut.endify('k8A'), '<8A', 'n endify');
+    });
+    it('Standalone diacritic vocalized ligature', () => {
+      test.strictEqual(sut.endify('t20o'), 'F2o', 'n endify');
+      test.strictEqual(sut.endify('l30u'), 'f3u', 'n endify');
+    });
+
+    // ------------------------------------------------------
+
+    it('Non-standalone non-vocalized non-final', () => {
+      test.strictEqual(sut.endify('0b0'), '0b0', '0 endify');
+      test.strictEqual(sut.endify('zwh'), 'zwh', 'w endify');
+    });
+    it('Non-standalone non-vocalized final connected', () => {
+      test.strictEqual(sut.endify('klb'), 'klB', 'b endify');
+      test.strictEqual(sut.endify('s9g'), 's9G', 'g endify');
+      test.strictEqual(sut.endify('yx='), 'yx+', '= endify');
+    });
+    it('Non-standalone non-vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('0n0n'), '0n0J', 'n endify');
+      test.strictEqual(sut.endify('d0wdk'), 'd0wd<', 'n endify');
+    });
+    it('Non-standalone non-vocalized ligature', () => {
+      test.strictEqual(sut.endify('0t0'), '0F', 'n endify');
+      test.strictEqual(sut.endify('dl0'), 'df', 'n endify');
+    });
+    // ------------------------------------------------------
+    it('Non-standalone vocalized non-final', () => {
+      test.strictEqual(sut.endify('ba0e'), 'ba0e', '0 endify');
+      test.strictEqual(sut.endify('kowa'), 'kowa', 'w endify');
+    });
+    it('Non-standalone vocalized final connected', () => {
+      test.strictEqual(sut.endify('badobo'), 'badoBo', 'b endify');
+      test.strictEqual(sut.endify('ktebag;'), 'ktebaG;', 'g endify');
+      test.strictEqual(sut.endify('deleda=i'), 'deleda+i', '= endify');
+    });
+    it('Non-standalone vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('gagonu'), 'gagoJu', 'n endify');
+      test.strictEqual(sut.endify('bekA'), 'be<A', 'n endify');
+    });
+    it('Non-standalone vocalized ligature', () => {
+      test.strictEqual(sut.endify('legat0o'), 'legaFo', 'n endify');
+      test.strictEqual(sut.endify('todarel0u'), 'todarefu', 'n endify');
+    });
+    // ------------------------------------------------------
+    it('Non-standalone diacritic vocalized non-final', () => {
+      test.strictEqual(sut.endify('mone02e'), 'mone02e', '0 endify');
+      test.strictEqual(sut.endify('nw;now3a'), 'nw;now3a', 'w endify');
+    });
+    it('Non-standalone diacritic vocalized final connected', () => {
+      test.strictEqual(sut.endify('d2ub5o'), 'd2uB5o', 'b endify');
+      test.strictEqual(sut.endify('g1eg6;'), 'g1eG6;', 'g endify');
+      test.strictEqual(sut.endify('mi4a=`i'), 'mi4a+`i', '= endify');
+    });
+    it('Non-standalone diacritic vocalized final non-connected', () => {
+      test.strictEqual(sut.endify('dob1un1u'), 'dob1uJ1u', 'n endify');
+      test.strictEqual(sut.endify('0eb3k8A'), '0eb3<8A', 'n endify');
+    });
+    it('Non-standalone diacritic vocalized ligature', () => {
+      test.strictEqual(sut.endify('h,t20o'), 'h,F2o', 'n endify');
+      test.strictEqual(sut.endify('r*el30u'), 'r*ef3u', 'n endify');
+    });
+    it('Blank word returns blank', () => {
+      const word = sut.endify('');
+      const wordExpected = '';
+      test.strictEqual(word, wordExpected, 'toCal_blank');
+    });
+    it('Null word returns null', () => {
+      const word = sut.endify(null);
+      const wordExpected = null;
+      test.strictEqual(word, wordExpected, 'toCal_null');
+    });
+    it('Undefined word returns undefined', () => {
+      const word = sut.endify(undefined);
+      const wordExpected = undefined;
+      test.strictEqual(word, wordExpected, 'toCal_undefined');
+    });
+    it('0 number as word returns 0', () => {
+      const word = sut.endify(0);
+      const wordExpected = 0;
+      test.strictEqual(word, wordExpected, 'toCal_zero');
+    });
+  });
   describe('Util', () => {
     it('Is Consonant', () => {
       test.ok(sut.isConsonant('0'), '0 isConsonant');
@@ -30,24 +161,24 @@ describe('Estrangela', () => {
       test.ok(!sut.isVowel(':'), ': isVowel');
       test.ok(!sut.isVowel(''), "! '' isVowel");
     });
-    it('Is Diacretic', () => {
-      test.ok(sut.isDiacretic('`'), '` isDiacretic');
-      test.ok(sut.isDiacretic('1'), '1 isDiacretic');
-      test.ok(sut.isDiacretic('2'), '2 isDiacretic');
-      test.ok(sut.isDiacretic('3'), '3 isDiacretic');
-      test.ok(sut.isDiacretic('#'), '# isDiacretic');
-      test.ok(sut.isDiacretic('5'), '5 isDiacretic');
-      test.ok(sut.isDiacretic('%'), '% isDiacretic');
-      test.ok(sut.isDiacretic('6'), '6 isDiacretic');
-      test.ok(sut.isDiacretic('^'), '^ isDiacretic');
-      test.ok(sut.isDiacretic('8'), '8 isDiacretic');
+    it('Is Diacritic', () => {
+      test.ok(sut.isDiacritic('`'), '` isDiacritic');
+      test.ok(sut.isDiacritic('1'), '1 isDiacritic');
+      test.ok(sut.isDiacritic('2'), '2 isDiacritic');
+      test.ok(sut.isDiacritic('3'), '3 isDiacritic');
+      test.ok(sut.isDiacritic('#'), '# isDiacritic');
+      test.ok(sut.isDiacritic('5'), '5 isDiacritic');
+      test.ok(sut.isDiacritic('%'), '% isDiacritic');
+      test.ok(sut.isDiacritic('6'), '6 isDiacritic');
+      test.ok(sut.isDiacritic('^'), '^ isDiacritic');
+      test.ok(sut.isDiacritic('8'), '8 isDiacritic');
 
-      test.ok(!sut.isDiacretic("'"), "! ' isDiacretic");
-      test.ok(!sut.isDiacretic(','), '! , isDiacretic');
-      test.ok(!sut.isDiacretic('*'), '! * isDiacretic');
-      test.ok(!sut.isDiacretic('_'), '! _ isDiacretic');
-      test.ok(!sut.isDiacretic(''), "! '' isDiacretic");
-      test.ok(!sut.isDiacretic(' '), "! ' ' isDiacretic");
+      test.ok(!sut.isDiacritic("'"), "! ' isDiacritic");
+      test.ok(!sut.isDiacritic(','), '! , isDiacritic');
+      test.ok(!sut.isDiacritic('*'), '! * isDiacritic');
+      test.ok(!sut.isDiacritic('_'), '! _ isDiacritic');
+      test.ok(!sut.isDiacritic(''), "! '' isDiacritic");
+      test.ok(!sut.isDiacritic(' '), "! ' ' isDiacritic");
     });
     it('Is Punctuation', () => {
       test.ok(sut.isPunctuation('.'), '. isPunctuation');
