@@ -82,6 +82,16 @@ export const finalNonConnected = Object.freeze(['<', 'J']);
 export const ligatures = Object.freeze(['f', 'F']);
 
 /**
+ * All Estrangela font consonants
+ */
+export const allConsonants = Object.freeze(
+  baseConsonants
+    .concat(finalConnected)
+    .concat(finalNonConnected)
+    .concat(ligatures)
+);
+
+/**
  * Estrangela consonants unconnected on the left
  * @constant
  * @type { string[] }
@@ -139,6 +149,11 @@ export const shiftedVowels = Object.freeze([
 export const baseVowels = Object.freeze(commonVowels.concat(easternVowels));
 
 /**
+ * All Estrangela vowels (including shifted)
+ */
+export const allVowels = Object.freeze(baseVowels.concat(shiftedVowels));
+
+/**
  * Estrangela base/common diacritics (both western and eastern)
  * @constant
  * @type { string[] }
@@ -178,22 +193,18 @@ export const shiftedDiacritics = Object.freeze([
 ]);
 
 /**
+ * All Estrangela diacritics (including shifted)
+ */
+export const allDiacritics = Object.freeze(
+  baseDiacritics.concat(shiftedDiacritics)
+);
+
+/**
  * Estrangela punctuation
  * @constant
  * @type { string[] }
 */
 export const punctuation = Object.freeze(['-', '_', '.', '?']);
-
-/**
- * @private
- * All Estrangela font consonants
- */
-const allConsonants = Object.freeze(
-  baseConsonants
-    .concat(finalConnected)
-    .concat(finalNonConnected)
-    .concat(ligatures)
-);
 
 /**
  * Is character c an Estrangela consonant
@@ -203,23 +214,11 @@ const allConsonants = Object.freeze(
 export const isConsonant = c => allConsonants.indexOf(c) > -1;
 
 /**
- * @private
- * All Estrangela vowels
- */
-const allVowels = Object.freeze(baseVowels.concat(shiftedVowels));
-
-/**
  * Is character c an Estrangela vowel
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela vowel
  */
 export const isVowel = c => allVowels.indexOf(c) > -1;
-
-/**
- * @private
- * All Estrangela diacritics
- */
-const allDiacritics = Object.freeze(baseDiacritics.concat(shiftedDiacritics));
 
 /**
  * Is character c an Estrangela diacritic

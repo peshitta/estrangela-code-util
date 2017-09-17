@@ -24,7 +24,7 @@ Following bundles are available:
 other libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.2.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.2.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.3.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.3.tgz)
 
 ## More information
 
@@ -66,15 +66,18 @@ npm run build
     * [.finalConnected](#module_estrangela.finalConnected) : <code>Array.&lt;string&gt;</code>
     * [.finalNonConnected](#module_estrangela.finalNonConnected) : <code>Array.&lt;string&gt;</code>
     * [.ligatures](#module_estrangela.ligatures) : <code>Array.&lt;string&gt;</code>
+    * [.allConsonants](#module_estrangela.allConsonants)
     * [.unconnected](#module_estrangela.unconnected) : <code>Array.&lt;string&gt;</code>
     * [.commonVowels](#module_estrangela.commonVowels) : <code>Array.&lt;string&gt;</code>
     * [.easternVowels](#module_estrangela.easternVowels) : <code>Array.&lt;string&gt;</code>
     * [.shiftedVowels](#module_estrangela.shiftedVowels) : <code>Array.&lt;string&gt;</code>
     * [.baseVowels](#module_estrangela.baseVowels) : <code>Array.&lt;string&gt;</code>
+    * [.allVowels](#module_estrangela.allVowels)
     * [.commonDiacritics](#module_estrangela.commonDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.easternDiacritics](#module_estrangela.easternDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.baseDiacritics](#module_estrangela.baseDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.shiftedDiacritics](#module_estrangela.shiftedDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.allDiacritics](#module_estrangela.allDiacritics)
     * [.punctuation](#module_estrangela.punctuation) : <code>Array.&lt;string&gt;</code>
     * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
@@ -107,6 +110,12 @@ Estrangela final non-connected modified consonants
 Estrangela 2 ligatures
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+<a name="module_estrangela.allConsonants"></a>
+
+### estrangela.allConsonants
+All Estrangela font consonants
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.unconnected"></a>
 
 ### estrangela.unconnected : <code>Array.&lt;string&gt;</code>
@@ -137,6 +146,12 @@ Estrangela shifted vowels (SHIFT key on)
 Estrangela vowels (both common and eastern) - excluding shifted
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+<a name="module_estrangela.allVowels"></a>
+
+### estrangela.allVowels
+All Estrangela vowels (including shifted)
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.commonDiacritics"></a>
 
 ### estrangela.commonDiacritics : <code>Array.&lt;string&gt;</code>
@@ -159,6 +174,12 @@ Estrangela diacritics - excluding shifted
 
 ### estrangela.shiftedDiacritics : <code>Array.&lt;string&gt;</code>
 Estrangela shifted diacritics
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+<a name="module_estrangela.allDiacritics"></a>
+
+### estrangela.allDiacritics
+All Estrangela diacritics (including shifted)
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.punctuation"></a>
