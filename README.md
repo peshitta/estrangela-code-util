@@ -66,18 +66,18 @@ npm run build
     * [.finalConnected](#module_estrangela.finalConnected) : <code>Array.&lt;string&gt;</code>
     * [.finalNonConnected](#module_estrangela.finalNonConnected) : <code>Array.&lt;string&gt;</code>
     * [.ligatures](#module_estrangela.ligatures) : <code>Array.&lt;string&gt;</code>
-    * [.allConsonants](#module_estrangela.allConsonants)
+    * [.allConsonants](#module_estrangela.allConsonants) : <code>Array.&lt;string&gt;</code>
     * [.unconnected](#module_estrangela.unconnected) : <code>Array.&lt;string&gt;</code>
     * [.commonVowels](#module_estrangela.commonVowels) : <code>Array.&lt;string&gt;</code>
     * [.easternVowels](#module_estrangela.easternVowels) : <code>Array.&lt;string&gt;</code>
     * [.shiftedVowels](#module_estrangela.shiftedVowels) : <code>Array.&lt;string&gt;</code>
     * [.baseVowels](#module_estrangela.baseVowels) : <code>Array.&lt;string&gt;</code>
-    * [.allVowels](#module_estrangela.allVowels)
+    * [.allVowels](#module_estrangela.allVowels) : <code>Array.&lt;string&gt;</code>
     * [.commonDiacritics](#module_estrangela.commonDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.easternDiacritics](#module_estrangela.easternDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.baseDiacritics](#module_estrangela.baseDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.shiftedDiacritics](#module_estrangela.shiftedDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.allDiacritics](#module_estrangela.allDiacritics)
+    * [.allDiacritics](#module_estrangela.allDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.punctuation](#module_estrangela.punctuation) : <code>Array.&lt;string&gt;</code>
     * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
@@ -112,7 +112,7 @@ Estrangela 2 ligatures
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.allConsonants"></a>
 
-### estrangela.allConsonants
+### estrangela.allConsonants : <code>Array.&lt;string&gt;</code>
 All Estrangela font consonants
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
@@ -148,7 +148,7 @@ Estrangela vowels (both common and eastern) - excluding shifted
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.allVowels"></a>
 
-### estrangela.allVowels
+### estrangela.allVowels : <code>Array.&lt;string&gt;</code>
 All Estrangela vowels (including shifted)
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
@@ -178,7 +178,7 @@ Estrangela shifted diacritics
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.allDiacritics"></a>
 
-### estrangela.allDiacritics
+### estrangela.allDiacritics : <code>Array.&lt;string&gt;</code>
 All Estrangela diacritics (including shifted)
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  

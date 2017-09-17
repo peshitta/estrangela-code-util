@@ -83,6 +83,8 @@ export const ligatures = Object.freeze(['f', 'F']);
 
 /**
  * All Estrangela font consonants
+ * @constant
+ * @type { string[] }
  */
 export const allConsonants = Object.freeze(
   baseConsonants
@@ -150,6 +152,8 @@ export const baseVowels = Object.freeze(commonVowels.concat(easternVowels));
 
 /**
  * All Estrangela vowels (including shifted)
+ * @constant
+ * @type { string[] }
  */
 export const allVowels = Object.freeze(baseVowels.concat(shiftedVowels));
 
@@ -194,6 +198,8 @@ export const shiftedDiacritics = Object.freeze([
 
 /**
  * All Estrangela diacritics (including shifted)
+ * @constant
+ * @type { string[] }
  */
 export const allDiacritics = Object.freeze(
   baseDiacritics.concat(shiftedDiacritics)
