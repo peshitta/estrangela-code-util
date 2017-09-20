@@ -68,6 +68,11 @@ describe('Estrangela', () => {
       test.strictEqual(sut.endify('s9g'), 's9G', 'g endify');
       test.strictEqual(sut.endify('yx='), 'yx+', '= endify');
     });
+    it('Non-standalone non-vocalized final connected with unknown symbols', () => {
+      test.strictEqual(sut.endify('Wklb'), 'WklB', 'b endify');
+      test.strictEqual(sut.endify('s9)g'), 's9)G', 'g endify');
+      test.strictEqual(sut.endify('yx=,'), 'yx+,', '= endify');
+    });
     it('Non-standalone non-vocalized final non-connected', () => {
       test.strictEqual(sut.endify('0n0n'), '0n0J', 'n endify');
       test.strictEqual(sut.endify('d0wdk'), 'd0wd<', 'n endify');
