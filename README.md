@@ -24,7 +24,7 @@ Following bundles are available:
 other libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.3.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.3.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.4.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.4.tgz)
 
 ## More information
 
@@ -79,10 +79,13 @@ npm run build
     * [.shiftedDiacritics](#module_estrangela.shiftedDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.allDiacritics](#module_estrangela.allDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.punctuation](#module_estrangela.punctuation) : <code>Array.&lt;string&gt;</code>
+    * [.joiners](#module_estrangela.joiners) : <code>Array.&lt;string&gt;</code>
     * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
     * [.isDiacritic](#module_estrangela.isDiacritic) ⇒ <code>boolean</code>
     * [.isPunctuation](#module_estrangela.isPunctuation) ⇒ <code>boolean</code>
+    * [.isJoiner](#module_estrangela.isJoiner) ⇒ <code>boolean</code>
+    * [.isEasternDiacritic](#module_estrangela.isEasternDiacritic) ⇒ <code>boolean</code>
     * [.isUnconnected](#module_estrangela.isUnconnected) ⇒ <code>boolean</code>
     * [.endify](#module_estrangela.endify) ⇒ <code>string</code>
 
@@ -188,6 +191,12 @@ All Estrangela diacritics (including shifted)
 Estrangela punctuation
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+<a name="module_estrangela.joiners"></a>
+
+### estrangela.joiners : <code>Array.&lt;string&gt;</code>
+Estrangela joiners
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.isConsonant"></a>
 
 ### estrangela.isConsonant ⇒ <code>boolean</code>
@@ -231,6 +240,30 @@ Is character c an Estrangela punctuation
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 **Returns**: <code>boolean</code> - true if c is Estrangela punctuation  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| c | <code>string</code> | input character |
+
+<a name="module_estrangela.isJoiner"></a>
+
+### estrangela.isJoiner ⇒ <code>boolean</code>
+Is character c an Estrangela joiner
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Returns**: <code>boolean</code> - true if c is Estrangela joiner  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| c | <code>string</code> | input character |
+
+<a name="module_estrangela.isEasternDiacritic"></a>
+
+### estrangela.isEasternDiacritic ⇒ <code>boolean</code>
+Is character c an Estrangela Eastern Diacritic
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Returns**: <code>boolean</code> - true if c is Estrangela Eastern Diacritic  
 
 | Param | Type | Description |
 | --- | --- | --- |

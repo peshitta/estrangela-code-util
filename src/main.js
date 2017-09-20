@@ -210,7 +210,14 @@ export const allDiacritics = Object.freeze(
  * @constant
  * @type { string[] }
 */
-export const punctuation = Object.freeze(['-', '_', '.', '?']);
+export const punctuation = Object.freeze(['.', '?']);
+
+/**
+ * Estrangela joiners
+ * @constant
+ * @type { string[] }
+*/
+export const joiners = Object.freeze(['-', '_']);
 
 /**
  * Is character c an Estrangela consonant
@@ -239,6 +246,20 @@ export const isDiacritic = c => allDiacritics.indexOf(c) > -1;
  * @returns { boolean } true if c is Estrangela punctuation
  */
 export const isPunctuation = c => punctuation.indexOf(c) > -1;
+
+/**
+ * Is character c an Estrangela joiner
+ * @param { string } c input character
+ * @returns { boolean } true if c is Estrangela joiner
+ */
+export const isJoiner = c => joiners.indexOf(c) > -1;
+
+/**
+ * Is character c an Estrangela Eastern Diacritic
+ * @param { string } c input character
+ * @returns { boolean } true if c is Estrangela Eastern Diacritic
+ */
+export const isEasternDiacritic = c => easternDiacritics.indexOf(c) > -1;
 
 /**
  * Is character c an unconnected on the left Estrangela consonant

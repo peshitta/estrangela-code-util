@@ -183,8 +183,8 @@ describe('Estrangela', () => {
     it('Is Punctuation', () => {
       test.ok(sut.isPunctuation('.'), '. isPunctuation');
       test.ok(sut.isPunctuation('?'), '? isPunctuation');
-      test.ok(sut.isPunctuation('-'), '- isPunctuation');
-      test.ok(sut.isPunctuation('_'), '_ isPunctuation');
+      test.ok(!sut.isPunctuation('-'), '- isPunctuation');
+      test.ok(!sut.isPunctuation('_'), '_ isPunctuation');
       test.ok(!sut.isPunctuation(''), "! '' isPunctuation");
       test.ok(!sut.isPunctuation(' '), "! ' ' isPunctuation");
       test.ok(!sut.isPunctuation('&'), '! & isPunctuation');
@@ -192,6 +192,32 @@ describe('Estrangela', () => {
       test.ok(!sut.isPunctuation('`'), '! ` isPunctuation');
       test.ok(!sut.isPunctuation('~'), '! ~ isPunctuation');
       test.ok(!sut.isPunctuation(','), '! , isPunctuation');
+    });
+    it('Is Joiner', () => {
+      test.ok(sut.isJoiner('-'), '- isJoiner');
+      test.ok(sut.isJoiner('_'), '_ isJoiner');
+      test.ok(!sut.isJoiner('.'), '. isJoiner');
+      test.ok(!sut.isJoiner('?'), '? isJoiner');
+      test.ok(!sut.isJoiner(''), "! '' isJoiner");
+      test.ok(!sut.isJoiner(' '), "! ' ' isJoiner");
+      test.ok(!sut.isJoiner('&'), '! & isJoiner');
+      test.ok(!sut.isJoiner('!'), '! ! isJoiner');
+      test.ok(!sut.isJoiner('`'), '! ` isJoiner');
+      test.ok(!sut.isJoiner('~'), '! ~ isJoiner');
+      test.ok(!sut.isJoiner(','), '! , isJoiner');
+    });
+    it('Is Eastern Diacritic', () => {
+      test.ok(sut.isEasternDiacritic('`'), '` isEasternDiacritic');
+      test.ok(sut.isEasternDiacritic('1'), '1 isEasternDiacritic');
+      test.ok(sut.isEasternDiacritic('8'), '8 isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic('?'), '? isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic(''), "! '' isEasternDiacritic");
+      test.ok(!sut.isEasternDiacritic(' '), "! ' ' isEasternDiacritic");
+      test.ok(!sut.isEasternDiacritic('&'), '! & isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic('!'), '! ! isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic('2'), '! ` isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic('~'), '! ~ isEasternDiacritic');
+      test.ok(!sut.isEasternDiacritic(','), '! , isEasternDiacritic');
     });
     it('Is Left Unconnected Consonant', () => {
       test.ok(sut.isUnconnected('r'), 'r isUnconnected');
