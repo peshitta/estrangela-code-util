@@ -83,11 +83,14 @@ npm run build
     * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
     * [.isDiacritic](#module_estrangela.isDiacritic) ⇒ <code>boolean</code>
+    * [.dotting](#module_estrangela.dotting) : <code>Array.&lt;string&gt;</code>
     * [.isPunctuation](#module_estrangela.isPunctuation) ⇒ <code>boolean</code>
     * [.isJoiner](#module_estrangela.isJoiner) ⇒ <code>boolean</code>
     * [.isEasternDiacritic](#module_estrangela.isEasternDiacritic) ⇒ <code>boolean</code>
     * [.isUnconnected](#module_estrangela.isUnconnected) ⇒ <code>boolean</code>
+    * [.isDotting](#module_estrangela.isDotting) ⇒ <code>boolean</code>
     * [.endify](#module_estrangela.endify) ⇒ <code>string</code>
+    * [.removeDotting](#module_estrangela.removeDotting) ⇒ <code>string</code>
 
 <a name="module_estrangela.baseConsonants"></a>
 
@@ -233,6 +236,12 @@ Is character c an Estrangela diacritic
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
+<a name="module_estrangela.dotting"></a>
+
+### estrangela.dotting : <code>Array.&lt;string&gt;</code>
+Vowels and diacritics: used for consonantal only mapping
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.isPunctuation"></a>
 
 ### estrangela.isPunctuation ⇒ <code>boolean</code>
@@ -281,6 +290,18 @@ Is character c an unconnected on the left Estrangela consonant
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
+<a name="module_estrangela.isDotting"></a>
+
+### estrangela.isDotting ⇒ <code>boolean</code>
+Returns true if c is dotting character
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Returns**: <code>boolean</code> - true if c is dotting  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| c | <code>string</code> | input character |
+
 <a name="module_estrangela.endify"></a>
 
 ### estrangela.endify ⇒ <code>string</code>
@@ -292,4 +313,16 @@ Fix end consonant for a word in base Estrangela font
 | Param | Type | Description |
 | --- | --- | --- |
 | word | <code>string</code> | input word |
+
+<a name="module_estrangela.removeDotting"></a>
+
+### estrangela.removeDotting ⇒ <code>string</code>
+Remove dotting (vowels and diacritics), leaving consonantal word only.
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Returns**: <code>string</code> - consonantal word  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| word | <code>string</code> | input word to be processed |
 

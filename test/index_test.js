@@ -244,3 +244,26 @@ describe('Estrangela', () => {
     });
   });
 });
+describe('removeDotting', () => {
+  const { removeDotting } = sut;
+  it('Check consonantal and vocalised', () => {
+    const word = '0bhwhY';
+    const expected = removeDotting(word);
+    const vocalised = removeDotting('0eb3ahewh5Y');
+    test.strictEqual(word, expected, 'removeDotting consonant only');
+    test.strictEqual(vocalised, expected, 'removeDotting vocalised');
+  });
+  it('Word with (wu) => (uO) mapping', () => {
+    const word = removeDotting('lb9ldbbykwJ');
+    const wordExpected = 'lb9ldbbykwJ';
+    const vocalised = removeDotting('leb39old2b3ab3eyk2w;J');
+    const vocalisedExpected = wordExpected;
+    test.strictEqual(word, wordExpected, 'toEstrangela_wu consonant');
+    test.strictEqual(vocalised, vocalisedExpected, 'toEstrangela_wu vocalised');
+  });
+  it('Blank word returns blank', () => {
+    const word = removeDotting('');
+    const wordExpected = '';
+    test.strictEqual(word, wordExpected, 'removeDotting_blank');
+  });
+});

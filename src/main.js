@@ -241,6 +241,13 @@ export const isVowel = c => allVowels.indexOf(c) > -1;
 export const isDiacritic = c => allDiacritics.indexOf(c) > -1;
 
 /**
+ * Vowels and diacritics: used for consonantal only mapping
+ * @constant
+ * @type { Array.<string> }
+ */
+export const dotting = Object.freeze(allVowels.concat(allDiacritics));
+
+/**
  * Is character c an Estrangela punctuation
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela punctuation
@@ -267,6 +274,13 @@ export const isEasternDiacritic = c => easternDiacritics.indexOf(c) > -1;
  * @returns { boolean } true if c is unconnected on the left consonant
  */
 export const isUnconnected = c => unconnected.indexOf(c) > -1;
+
+/**
+ * Returns true if c is dotting character
+ * @param { string } c input character
+ * @returns { boolean } true if c is dotting
+ */
+export const isDotting = c => dotting.indexOf(c) > -1;
 
 /**
  * Map between regular and final ligature
@@ -395,4 +409,26 @@ export const endify = word => {
     return changedWord;
   }
   return word;
+};
+/**
+ * Remove dotting (vowels and diacritics), leaving consonantal word only.
+ * @param { string } word input word to be processed
+ * @returns { string } consonantal word
+ */
+export const removeDotting = word => {
+  if (!word) {
+    return word;
+  }
+
+  let hasDotting = false;
+  const stack = [];
+  for (let i = 0, len = word.length; i < len; i++) {
+    const c = word.charAt(i);
+    if (isDotting(c)) {
+      hasDotting = true;
+    } else {
+      stack.push(c);
+    }
+  }
+  return hasDotting ? stack.join('') : word;
 };
