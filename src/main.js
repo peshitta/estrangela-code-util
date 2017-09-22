@@ -220,6 +220,13 @@ export const punctuation = Object.freeze(['.', '?']);
 export const joiners = Object.freeze(['-', '_']);
 
 /**
+ * Vowels and diacritics: used for consonantal only mapping
+ * @constant
+ * @type { Array.<string> }
+ */
+export const dotting = Object.freeze(allVowels.concat(allDiacritics));
+
+/**
  * Is character c an Estrangela consonant
  * @param { string } c input character
  * @returns { boolean } true if c is Estrangela consonant
@@ -239,13 +246,6 @@ export const isVowel = c => allVowels.indexOf(c) > -1;
  * @returns { boolean } true if c is Estrangela diacritic
  */
 export const isDiacritic = c => allDiacritics.indexOf(c) > -1;
-
-/**
- * Vowels and diacritics: used for consonantal only mapping
- * @constant
- * @type { Array.<string> }
- */
-export const dotting = Object.freeze(allVowels.concat(allDiacritics));
 
 /**
  * Is character c an Estrangela punctuation
@@ -410,6 +410,7 @@ export const endify = word => {
   }
   return word;
 };
+
 /**
  * Remove dotting (vowels and diacritics), leaving consonantal word only.
  * @param { string } word input word to be processed

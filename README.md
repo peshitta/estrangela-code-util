@@ -80,10 +80,10 @@ npm run build
     * [.allDiacritics](#module_estrangela.allDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.punctuation](#module_estrangela.punctuation) : <code>Array.&lt;string&gt;</code>
     * [.joiners](#module_estrangela.joiners) : <code>Array.&lt;string&gt;</code>
+    * [.dotting](#module_estrangela.dotting) : <code>Array.&lt;string&gt;</code>
     * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
     * [.isDiacritic](#module_estrangela.isDiacritic) ⇒ <code>boolean</code>
-    * [.dotting](#module_estrangela.dotting) : <code>Array.&lt;string&gt;</code>
     * [.isPunctuation](#module_estrangela.isPunctuation) ⇒ <code>boolean</code>
     * [.isJoiner](#module_estrangela.isJoiner) ⇒ <code>boolean</code>
     * [.isEasternDiacritic](#module_estrangela.isEasternDiacritic) ⇒ <code>boolean</code>
@@ -200,6 +200,12 @@ Estrangela punctuation
 Estrangela joiners
 
 **Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+<a name="module_estrangela.dotting"></a>
+
+### estrangela.dotting : <code>Array.&lt;string&gt;</code>
+Vowels and diacritics: used for consonantal only mapping
+
+**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.isConsonant"></a>
 
 ### estrangela.isConsonant ⇒ <code>boolean</code>
@@ -236,12 +242,6 @@ Is character c an Estrangela diacritic
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.dotting"></a>
-
-### estrangela.dotting : <code>Array.&lt;string&gt;</code>
-Vowels and diacritics: used for consonantal only mapping
-
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
 <a name="module_estrangela.isPunctuation"></a>
 
 ### estrangela.isPunctuation ⇒ <code>boolean</code>
