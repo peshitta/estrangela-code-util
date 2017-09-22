@@ -1,6 +1,6 @@
 {
   "name": "estrangela-code-util",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Utility library for Estrangela ASCII code font",
   "main": "build/estrangela-code-util.js",
   "main݂Min": "build/estrangela-code-util.min.js",
