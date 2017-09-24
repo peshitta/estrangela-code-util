@@ -425,7 +425,7 @@ export const removeDotting = word => {
   const stack = [];
   for (let i = 0, len = word.length; i < len; i++) {
     const c = word.charAt(i);
-    if (isDotting(c)) {
+    if (isDotting(c) || isJoiner(c)) {
       hasDotting = true;
     } else {
       stack.push(c);
