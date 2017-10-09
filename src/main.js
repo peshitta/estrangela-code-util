@@ -1,5 +1,4 @@
-/** @module estrangela */
-
+/** @module estrangelaCodeUtil */
 /**
  * Estrangela base consonants - the 22 aramaic consonants
  * @constant

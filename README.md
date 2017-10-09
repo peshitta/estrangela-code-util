@@ -8,9 +8,10 @@
 [![devDependencies Status](https://david-dm.org/peshitta/estrangela-code-util/dev-status.svg)](https://david-dm.org/peshitta/estrangela-code-util?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/peshitta/estrangela-code-util/badge.svg?branch=master)](https://coveralls.io/github/peshitta/estrangela-code-util?branch=master)
 
-Utility library for Estrangela ASCII code font
+Estrangela ASCII code font utilities
 
 ## Installation
+
 In order to use this library, [Node.js](https://nodejs.org) should be installed. 
 Then run:
 ```
@@ -20,11 +21,11 @@ npm install estrangela-code-util --save
 Following bundles are available:
 * `estrangela-code-util.js` - UMD ES5 version for use in browser, node, etc.
 * `estrangela-code-util.min.js` - minified version of `estrangela-code-util.js`
-* `estrangela-code-util.esm.js` - ES6 module version, suitable for bundling with
-other libraries and applications
+* `estrangela-code-util.esm.js` - ES6 module version, suitable for bundling with other 
+libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.6.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.6.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.7.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.7.tgz)
 
 ## More information
 
@@ -61,265 +62,265 @@ npm run build
 
 ## API Reference
 
-* [estrangela](#module_estrangela)
-    * [.baseConsonants](#module_estrangela.baseConsonants) : <code>Array.&lt;string&gt;</code>
-    * [.finalConnected](#module_estrangela.finalConnected) : <code>Array.&lt;string&gt;</code>
-    * [.finalNonConnected](#module_estrangela.finalNonConnected) : <code>Array.&lt;string&gt;</code>
-    * [.ligatures](#module_estrangela.ligatures) : <code>Array.&lt;string&gt;</code>
-    * [.allConsonants](#module_estrangela.allConsonants) : <code>Array.&lt;string&gt;</code>
-    * [.unconnected](#module_estrangela.unconnected) : <code>Array.&lt;string&gt;</code>
-    * [.commonVowels](#module_estrangela.commonVowels) : <code>Array.&lt;string&gt;</code>
-    * [.easternVowels](#module_estrangela.easternVowels) : <code>Array.&lt;string&gt;</code>
-    * [.shiftedVowels](#module_estrangela.shiftedVowels) : <code>Array.&lt;string&gt;</code>
-    * [.baseVowels](#module_estrangela.baseVowels) : <code>Array.&lt;string&gt;</code>
-    * [.allVowels](#module_estrangela.allVowels) : <code>Array.&lt;string&gt;</code>
-    * [.commonDiacritics](#module_estrangela.commonDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.easternDiacritics](#module_estrangela.easternDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.baseDiacritics](#module_estrangela.baseDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.shiftedDiacritics](#module_estrangela.shiftedDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.allDiacritics](#module_estrangela.allDiacritics) : <code>Array.&lt;string&gt;</code>
-    * [.punctuation](#module_estrangela.punctuation) : <code>Array.&lt;string&gt;</code>
-    * [.joiners](#module_estrangela.joiners) : <code>Array.&lt;string&gt;</code>
-    * [.dotting](#module_estrangela.dotting) : <code>Array.&lt;string&gt;</code>
-    * [.isConsonant](#module_estrangela.isConsonant) ⇒ <code>boolean</code>
-    * [.isVowel](#module_estrangela.isVowel) ⇒ <code>boolean</code>
-    * [.isDiacritic](#module_estrangela.isDiacritic) ⇒ <code>boolean</code>
-    * [.isPunctuation](#module_estrangela.isPunctuation) ⇒ <code>boolean</code>
-    * [.isJoiner](#module_estrangela.isJoiner) ⇒ <code>boolean</code>
-    * [.isEasternDiacritic](#module_estrangela.isEasternDiacritic) ⇒ <code>boolean</code>
-    * [.isUnconnected](#module_estrangela.isUnconnected) ⇒ <code>boolean</code>
-    * [.isDotting](#module_estrangela.isDotting) ⇒ <code>boolean</code>
-    * [.endify](#module_estrangela.endify) ⇒ <code>string</code>
-    * [.removeDotting](#module_estrangela.removeDotting) ⇒ <code>string</code>
+* [estrangelaCodeUtil](#module_estrangelaCodeUtil)
+    * [.baseConsonants](#module_estrangelaCodeUtil.baseConsonants) : <code>Array.&lt;string&gt;</code>
+    * [.finalConnected](#module_estrangelaCodeUtil.finalConnected) : <code>Array.&lt;string&gt;</code>
+    * [.finalNonConnected](#module_estrangelaCodeUtil.finalNonConnected) : <code>Array.&lt;string&gt;</code>
+    * [.ligatures](#module_estrangelaCodeUtil.ligatures) : <code>Array.&lt;string&gt;</code>
+    * [.allConsonants](#module_estrangelaCodeUtil.allConsonants) : <code>Array.&lt;string&gt;</code>
+    * [.unconnected](#module_estrangelaCodeUtil.unconnected) : <code>Array.&lt;string&gt;</code>
+    * [.commonVowels](#module_estrangelaCodeUtil.commonVowels) : <code>Array.&lt;string&gt;</code>
+    * [.easternVowels](#module_estrangelaCodeUtil.easternVowels) : <code>Array.&lt;string&gt;</code>
+    * [.shiftedVowels](#module_estrangelaCodeUtil.shiftedVowels) : <code>Array.&lt;string&gt;</code>
+    * [.baseVowels](#module_estrangelaCodeUtil.baseVowels) : <code>Array.&lt;string&gt;</code>
+    * [.allVowels](#module_estrangelaCodeUtil.allVowels) : <code>Array.&lt;string&gt;</code>
+    * [.commonDiacritics](#module_estrangelaCodeUtil.commonDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.easternDiacritics](#module_estrangelaCodeUtil.easternDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.baseDiacritics](#module_estrangelaCodeUtil.baseDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.shiftedDiacritics](#module_estrangelaCodeUtil.shiftedDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.allDiacritics](#module_estrangelaCodeUtil.allDiacritics) : <code>Array.&lt;string&gt;</code>
+    * [.punctuation](#module_estrangelaCodeUtil.punctuation) : <code>Array.&lt;string&gt;</code>
+    * [.joiners](#module_estrangelaCodeUtil.joiners) : <code>Array.&lt;string&gt;</code>
+    * [.dotting](#module_estrangelaCodeUtil.dotting) : <code>Array.&lt;string&gt;</code>
+    * [.isConsonant](#module_estrangelaCodeUtil.isConsonant) ⇒ <code>boolean</code>
+    * [.isVowel](#module_estrangelaCodeUtil.isVowel) ⇒ <code>boolean</code>
+    * [.isDiacritic](#module_estrangelaCodeUtil.isDiacritic) ⇒ <code>boolean</code>
+    * [.isPunctuation](#module_estrangelaCodeUtil.isPunctuation) ⇒ <code>boolean</code>
+    * [.isJoiner](#module_estrangelaCodeUtil.isJoiner) ⇒ <code>boolean</code>
+    * [.isEasternDiacritic](#module_estrangelaCodeUtil.isEasternDiacritic) ⇒ <code>boolean</code>
+    * [.isUnconnected](#module_estrangelaCodeUtil.isUnconnected) ⇒ <code>boolean</code>
+    * [.isDotting](#module_estrangelaCodeUtil.isDotting) ⇒ <code>boolean</code>
+    * [.endify](#module_estrangelaCodeUtil.endify) ⇒ <code>string</code>
+    * [.removeDotting](#module_estrangelaCodeUtil.removeDotting) ⇒ <code>string</code>
 
-<a name="module_estrangela.baseConsonants"></a>
+<a name="module_estrangelaCodeUtil.baseConsonants"></a>
 
-### estrangela.baseConsonants : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.baseConsonants : <code>Array.&lt;string&gt;</code>
 Estrangela base consonants - the 22 aramaic consonants
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.finalConnected"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.finalConnected"></a>
 
-### estrangela.finalConnected : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.finalConnected : <code>Array.&lt;string&gt;</code>
 Estrangela final connected modified consonants
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.finalNonConnected"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.finalNonConnected"></a>
 
-### estrangela.finalNonConnected : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.finalNonConnected : <code>Array.&lt;string&gt;</code>
 Estrangela final non-connected modified consonants
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.ligatures"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.ligatures"></a>
 
-### estrangela.ligatures : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.ligatures : <code>Array.&lt;string&gt;</code>
 Estrangela 2 ligatures
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.allConsonants"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.allConsonants"></a>
 
-### estrangela.allConsonants : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.allConsonants : <code>Array.&lt;string&gt;</code>
 All Estrangela font consonants
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.unconnected"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.unconnected"></a>
 
-### estrangela.unconnected : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.unconnected : <code>Array.&lt;string&gt;</code>
 Estrangela consonants unconnected on the left
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.commonVowels"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.commonVowels"></a>
 
-### estrangela.commonVowels : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.commonVowels : <code>Array.&lt;string&gt;</code>
 Estrangela common vowels - common to both eastern and western
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.easternVowels"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.easternVowels"></a>
 
-### estrangela.easternVowels : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.easternVowels : <code>Array.&lt;string&gt;</code>
 Estrangela eastern only vowels
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.shiftedVowels"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.shiftedVowels"></a>
 
-### estrangela.shiftedVowels : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.shiftedVowels : <code>Array.&lt;string&gt;</code>
 Estrangela shifted vowels (SHIFT key on)
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.baseVowels"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.baseVowels"></a>
 
-### estrangela.baseVowels : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.baseVowels : <code>Array.&lt;string&gt;</code>
 Estrangela vowels (both common and eastern) - excluding shifted
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.allVowels"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.allVowels"></a>
 
-### estrangela.allVowels : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.allVowels : <code>Array.&lt;string&gt;</code>
 All Estrangela vowels (including shifted)
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.commonDiacritics"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.commonDiacritics"></a>
 
-### estrangela.commonDiacritics : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.commonDiacritics : <code>Array.&lt;string&gt;</code>
 Estrangela base/common diacritics (both western and eastern)
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.easternDiacritics"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.easternDiacritics"></a>
 
-### estrangela.easternDiacritics : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.easternDiacritics : <code>Array.&lt;string&gt;</code>
 Estrangela eastern specific diacritics
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.baseDiacritics"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.baseDiacritics"></a>
 
-### estrangela.baseDiacritics : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.baseDiacritics : <code>Array.&lt;string&gt;</code>
 Estrangela diacritics - excluding shifted
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.shiftedDiacritics"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.shiftedDiacritics"></a>
 
-### estrangela.shiftedDiacritics : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.shiftedDiacritics : <code>Array.&lt;string&gt;</code>
 Estrangela shifted diacritics
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.allDiacritics"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.allDiacritics"></a>
 
-### estrangela.allDiacritics : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.allDiacritics : <code>Array.&lt;string&gt;</code>
 All Estrangela diacritics (including shifted)
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.punctuation"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.punctuation"></a>
 
-### estrangela.punctuation : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.punctuation : <code>Array.&lt;string&gt;</code>
 Estrangela punctuation
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.joiners"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.joiners"></a>
 
-### estrangela.joiners : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.joiners : <code>Array.&lt;string&gt;</code>
 Estrangela joiners
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.dotting"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.dotting"></a>
 
-### estrangela.dotting : <code>Array.&lt;string&gt;</code>
+### estrangelaCodeUtil.dotting : <code>Array.&lt;string&gt;</code>
 Vowels and diacritics: used for consonantal only mapping
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.isConsonant"></a>
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.isConsonant"></a>
 
-### estrangela.isConsonant ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isConsonant ⇒ <code>boolean</code>
 Is character c an Estrangela consonant
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela consonant  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isVowel"></a>
+<a name="module_estrangelaCodeUtil.isVowel"></a>
 
-### estrangela.isVowel ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isVowel ⇒ <code>boolean</code>
 Is character c an Estrangela vowel
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela vowel  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isDiacritic"></a>
+<a name="module_estrangelaCodeUtil.isDiacritic"></a>
 
-### estrangela.isDiacritic ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isDiacritic ⇒ <code>boolean</code>
 Is character c an Estrangela diacritic
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela diacritic  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isPunctuation"></a>
+<a name="module_estrangelaCodeUtil.isPunctuation"></a>
 
-### estrangela.isPunctuation ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isPunctuation ⇒ <code>boolean</code>
 Is character c an Estrangela punctuation
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela punctuation  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isJoiner"></a>
+<a name="module_estrangelaCodeUtil.isJoiner"></a>
 
-### estrangela.isJoiner ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isJoiner ⇒ <code>boolean</code>
 Is character c an Estrangela joiner
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela joiner  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isEasternDiacritic"></a>
+<a name="module_estrangelaCodeUtil.isEasternDiacritic"></a>
 
-### estrangela.isEasternDiacritic ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isEasternDiacritic ⇒ <code>boolean</code>
 Is character c an Estrangela Eastern Diacritic
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is Estrangela Eastern Diacritic  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isUnconnected"></a>
+<a name="module_estrangelaCodeUtil.isUnconnected"></a>
 
-### estrangela.isUnconnected ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isUnconnected ⇒ <code>boolean</code>
 Is character c an unconnected on the left Estrangela consonant
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is unconnected on the left consonant  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.isDotting"></a>
+<a name="module_estrangelaCodeUtil.isDotting"></a>
 
-### estrangela.isDotting ⇒ <code>boolean</code>
+### estrangelaCodeUtil.isDotting ⇒ <code>boolean</code>
 Returns true if c is dotting character
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>boolean</code> - true if c is dotting  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | c | <code>string</code> | input character |
 
-<a name="module_estrangela.endify"></a>
+<a name="module_estrangelaCodeUtil.endify"></a>
 
-### estrangela.endify ⇒ <code>string</code>
+### estrangelaCodeUtil.endify ⇒ <code>string</code>
 Fix end consonant for a word in base Estrangela font
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>string</code> - word with end consonant corrected  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | word | <code>string</code> | input word |
 
-<a name="module_estrangela.removeDotting"></a>
+<a name="module_estrangelaCodeUtil.removeDotting"></a>
 
-### estrangela.removeDotting ⇒ <code>string</code>
+### estrangelaCodeUtil.removeDotting ⇒ <code>string</code>
 Remove dotting (vowels and diacritics), leaving consonantal word only.
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>string</code> - consonantal word  
 
 | Param | Type | Description |

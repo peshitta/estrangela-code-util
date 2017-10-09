@@ -1,5 +1,4 @@
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
+import buble from 'rollup-plugin-buble';
 import istanbul from 'rollup-plugin-istanbul';
 import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
@@ -8,8 +7,8 @@ const isProduction = process.env.BUILD === 'production';
 const isDev = process.env.BUILD === 'dev';
 const banner = isProduction
   ? '/**\n' +
-    '* @file Utility library for Estrangela ASCII code font\n' +
-    '* @version 1.0.6\n' +
+    '* @file Estrangela ASCII code font utilities\n' +
+    '* @version 1.0.7\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -42,10 +41,11 @@ const external = Object.keys(pkg.dependencies);
 const input = 'src/main.js';
 const name = 'estrangelaCodeUtil';
 const format = 'umd';
+const globals = {};
 const sourcemap = !isProduction;
-const plugins = [babel(babelrc({ path: 'babelrc.json' }))];
+const plugins = [buble()];
 
-// browser-friendly UMD build
+// browser/nodejs-friendly UMD build
 const targets = [
   {
     input,
@@ -53,6 +53,7 @@ const targets = [
     external,
     plugins: plugins.slice(0),
     name,
+    globals,
     banner,
     sourcemap
   }
@@ -79,13 +80,14 @@ if (isProduction) {
     })
   );
 
-  // browser-friendly minified UMD build
+  // browser/nodejs-friendly minified UMD build
   targets.push({
     input,
-    output: [{ file: pkg.main݂Min, format }],
+    output: [{ file: pkg.mainMin, format }],
     external,
     plugins,
     name,
+    globals,
     banner
   });
 } else if (!isDev) {
