@@ -68,6 +68,10 @@ describe('Estrangela', () => {
       test.strictEqual(sut.endify('s9g'), 's9G', 'g endify');
       test.strictEqual(sut.endify('yx='), 'yx+', '= endify');
     });
+    it('Non-standalone non-vocalized final k/n connected', () => {
+      test.strictEqual(sut.endify('kbk'), 'kbK', 'K endify');
+      test.strictEqual(sut.endify('sgn'), 'sgN', 'N endify');
+    });
     it('Non-standalone non-vocalized final connected with unknown symbols', () => {
       test.strictEqual(sut.endify('Wklb'), 'WklB', 'b endify');
       test.strictEqual(sut.endify('s9)g'), 's9)G', 'g endify');
@@ -92,8 +96,8 @@ describe('Estrangela', () => {
       test.strictEqual(sut.endify('deleda=i'), 'deleda+i', '= endify');
     });
     it('Non-standalone vocalized final non-connected', () => {
-      test.strictEqual(sut.endify('gagonu'), 'gagoJu', 'n endify');
-      test.strictEqual(sut.endify('bekA'), 'be<A', 'n endify');
+      test.strictEqual(sut.endify('gagonu'), 'gagoNu', 'n endify');
+      test.strictEqual(sut.endify('bekA'), 'beKA', 'n endify');
     });
     it('Non-standalone vocalized ligature', () => {
       test.strictEqual(sut.endify('legat0o'), 'legaFo', 'n endify');
@@ -110,8 +114,8 @@ describe('Estrangela', () => {
       test.strictEqual(sut.endify('mi4a=`i'), 'mi4a+`i', '= endify');
     });
     it('Non-standalone diacritic vocalized final non-connected', () => {
-      test.strictEqual(sut.endify('dob1un1u'), 'dob1uJ1u', 'n endify');
-      test.strictEqual(sut.endify('0eb3k8A'), '0eb3<8A', 'n endify');
+      test.strictEqual(sut.endify('dob1un1u'), 'dob1uN1u', 'n endify');
+      test.strictEqual(sut.endify('0eb3k8A'), '0eb3K8A', 'n endify');
     });
     it('Non-standalone diacritic vocalized ligature', () => {
       test.strictEqual(sut.endify('h,t20o'), 'h,F2o', 'n endify');

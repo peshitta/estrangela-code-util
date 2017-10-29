@@ -440,7 +440,7 @@ export const endify = word => {
     if (isConsonant(c)) {
       if (nonConnectedState) {
         const nc = final.nonConnected(stack[si]);
-        if (nc) {
+        if (nc && !final.connected(c)) {
           stack[si] = nc;
         }
         break;
