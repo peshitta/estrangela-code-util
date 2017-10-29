@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.7.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.7.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.8.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.8.tgz)
 
 ## More information
 
@@ -63,17 +63,20 @@ npm run build
 ## API Reference
 
 * [estrangelaCodeUtil](#module_estrangelaCodeUtil)
+    * [.consonantsByName](#module_estrangelaCodeUtil.consonantsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.baseConsonants](#module_estrangelaCodeUtil.baseConsonants) : <code>Array.&lt;string&gt;</code>
     * [.finalConnected](#module_estrangelaCodeUtil.finalConnected) : <code>Array.&lt;string&gt;</code>
     * [.finalNonConnected](#module_estrangelaCodeUtil.finalNonConnected) : <code>Array.&lt;string&gt;</code>
     * [.ligatures](#module_estrangelaCodeUtil.ligatures) : <code>Array.&lt;string&gt;</code>
     * [.allConsonants](#module_estrangelaCodeUtil.allConsonants) : <code>Array.&lt;string&gt;</code>
     * [.unconnected](#module_estrangelaCodeUtil.unconnected) : <code>Array.&lt;string&gt;</code>
+    * [.vowelsByName](#module_estrangelaCodeUtil.vowelsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.commonVowels](#module_estrangelaCodeUtil.commonVowels) : <code>Array.&lt;string&gt;</code>
     * [.easternVowels](#module_estrangelaCodeUtil.easternVowels) : <code>Array.&lt;string&gt;</code>
     * [.shiftedVowels](#module_estrangelaCodeUtil.shiftedVowels) : <code>Array.&lt;string&gt;</code>
     * [.baseVowels](#module_estrangelaCodeUtil.baseVowels) : <code>Array.&lt;string&gt;</code>
     * [.allVowels](#module_estrangelaCodeUtil.allVowels) : <code>Array.&lt;string&gt;</code>
+    * [.diacriticsByName](#module_estrangelaCodeUtil.diacriticsByName) : <code>Object.&lt;string, string&gt;</code>
     * [.commonDiacritics](#module_estrangelaCodeUtil.commonDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.easternDiacritics](#module_estrangelaCodeUtil.easternDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.baseDiacritics](#module_estrangelaCodeUtil.baseDiacritics) : <code>Array.&lt;string&gt;</code>
@@ -91,8 +94,15 @@ npm run build
     * [.isUnconnected](#module_estrangelaCodeUtil.isUnconnected) ⇒ <code>boolean</code>
     * [.isDotting](#module_estrangelaCodeUtil.isDotting) ⇒ <code>boolean</code>
     * [.endify](#module_estrangelaCodeUtil.endify) ⇒ <code>string</code>
+    * [.isDotted](#module_estrangelaCodeUtil.isDotted) ⇒ <code>boolean</code>
     * [.removeDotting](#module_estrangelaCodeUtil.removeDotting) ⇒ <code>string</code>
 
+<a name="module_estrangelaCodeUtil.consonantsByName"></a>
+
+### estrangelaCodeUtil.consonantsByName : <code>Object.&lt;string, string&gt;</code>
+Estrangela consonant name to value map
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 <a name="module_estrangelaCodeUtil.baseConsonants"></a>
 
 ### estrangelaCodeUtil.baseConsonants : <code>Array.&lt;string&gt;</code>
@@ -129,6 +139,12 @@ All Estrangela font consonants
 Estrangela consonants unconnected on the left
 
 **Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.vowelsByName"></a>
+
+### estrangelaCodeUtil.vowelsByName : <code>Object.&lt;string, string&gt;</code>
+Estrangela vowel name to value map
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 <a name="module_estrangelaCodeUtil.commonVowels"></a>
 
 ### estrangelaCodeUtil.commonVowels : <code>Array.&lt;string&gt;</code>
@@ -157,6 +173,16 @@ Estrangela vowels (both common and eastern) - excluding shifted
 
 ### estrangelaCodeUtil.allVowels : <code>Array.&lt;string&gt;</code>
 All Estrangela vowels (including shifted)
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.diacriticsByName"></a>
+
+### estrangelaCodeUtil.diacriticsByName : <code>Object.&lt;string, string&gt;</code>
+Sedra/CAL diacritic name map
+1. qushaya: __2__ - dot above
+2. rukkakha: __3__ - dot below
+3. lineaOccultans: **5** - linea occultans
+4. seyame: __*__ - seyame, rebwe
 
 **Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 <a name="module_estrangelaCodeUtil.commonDiacritics"></a>
@@ -310,6 +336,18 @@ Fix end consonant for a word in base Estrangela font
 
 **Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 **Returns**: <code>string</code> - word with end consonant corrected  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| word | <code>string</code> | input word |
+
+<a name="module_estrangelaCodeUtil.isDotted"></a>
+
+### estrangelaCodeUtil.isDotted ⇒ <code>boolean</code>
+Return true if input word has vowels or diacritics
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+**Returns**: <code>boolean</code> - true if word has vowels or diacritics  
 
 | Param | Type | Description |
 | --- | --- | --- |

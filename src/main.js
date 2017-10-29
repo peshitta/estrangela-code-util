@@ -1,4 +1,44 @@
 /** @module estrangelaCodeUtil */
+import { hasDotting, clearDotting } from 'aramaic-mapper';
+
+/**
+ * Estrangela consonant name to value map
+ * @constant
+ * @type { Object.<string, string> }
+*/
+export const consonantsByName = Object.freeze(
+  Object.create(null, {
+    alaph: { value: '0', enumerable: true },
+    beth: { value: 'b', enumerable: true },
+    gamal: { value: 'g', enumerable: true },
+    dalath: { value: 'd', enumerable: true },
+
+    he: { value: 'h', enumerable: true },
+    waw: { value: 'w', enumerable: true },
+    zayn: { value: 'z', enumerable: true },
+
+    heth: { value: 'x', enumerable: true },
+    teth: { value: '=', enumerable: true },
+    yod: { value: 'y', enumerable: true },
+
+    kaph: { value: 'k', enumerable: true },
+    lamadh: { value: 'l', enumerable: true },
+    mim: { value: 'm', enumerable: true },
+    nun: { value: 'n', enumerable: true },
+
+    semkath: { value: 's', enumerable: true },
+    e: { value: '9', enumerable: true },
+    pe: { value: 'p', enumerable: true },
+    sadhe: { value: 'c', enumerable: true },
+
+    qoph: { value: 'q', enumerable: true },
+    resh: { value: 'r', enumerable: true },
+    shin: { value: '4', enumerable: true },
+    taw: { value: 't', enumerable: true }
+  })
+);
+
+const l = consonantsByName;
 /**
  * Estrangela base consonants - the 22 aramaic consonants
  * @constant
@@ -6,38 +46,38 @@
 */
 export const baseConsonants = Object.freeze([
   // abgad
-  '0',
-  'b',
-  'g',
-  'd',
+  l.alaph,
+  l.beth,
+  l.gamal,
+  l.dalath,
 
   // hawaz
-  'h',
-  'w',
-  'z',
+  l.he,
+  l.waw,
+  l.zayn,
 
   // ḥaṭy
-  'x',
-  '=',
-  'y',
+  l.heth,
+  l.teth,
+  l.yod,
 
   // kalman
-  'k',
-  'l',
-  'm',
-  'n',
+  l.kaph,
+  l.lamadh,
+  l.mim,
+  l.nun,
 
   // saʿpac
-  's',
-  '9',
-  'p',
-  'c',
+  l.semkath,
+  l.e,
+  l.pe,
+  l.sadhe,
 
   // qarshat
-  'q',
-  'r',
-  '4',
-  't'
+  l.qoph,
+  l.resh,
+  l.shin,
+  l.taw
 ]);
 
 /**
@@ -109,15 +149,33 @@ export const unconnected = Object.freeze([
 ]);
 
 /**
+ * Estrangela vowel name to value map
+ * @constant
+ * @type { Object.<string, string> }
+*/
+export const vowelsByName = Object.freeze(
+  Object.create(null, {
+    pthaha: { value: 'e', enumerable: true },
+    zqapha: { value: 'a', enumerable: true },
+    rbasa: { value: 'o', enumerable: true },
+    hbasaEsasa: { value: ';', enumerable: true },
+
+    zlama: { value: 'i', enumerable: true },
+    rwaha: { value: 'u', enumerable: true }
+  })
+);
+
+const v = vowelsByName;
+/**
  * Estrangela common vowels - common to both eastern and western
  * @constant
  * @type { string[] }
 */
 export const commonVowels = Object.freeze([
-  'e', // a
-  'a', // o
-  'o', // e
-  ';' // i u
+  v.pthaha, // a
+  v.zqapha, // o
+  v.rbasa, // e
+  v.hbasaEsasa // i u
 ]);
 
 /**
@@ -126,8 +184,8 @@ export const commonVowels = Object.freeze([
  * @type { string[] }
 */
 export const easternVowels = Object.freeze([
-  'i', // E
-  'u' // O
+  v.zlama, // E
+  v.rwaha // O
 ]);
 
 /**
@@ -157,15 +215,34 @@ export const baseVowels = Object.freeze(commonVowels.concat(easternVowels));
 export const allVowels = Object.freeze(baseVowels.concat(shiftedVowels));
 
 /**
+ * Sedra/CAL diacritic name map
+ * 1. qushaya: __2__ - dot above
+ * 2. rukkakha: __3__ - dot below
+ * 3. lineaOccultans: **5** - linea occultans
+ * 4. seyame: __*__ - seyame, rebwe
+ * @constant
+ * @type { Object.<string, string> }
+*/
+export const diacriticsByName = Object.freeze(
+  Object.create(null, {
+    qushaya: { value: '2', enumerable: true },
+    rukkakha: { value: '3', enumerable: true },
+    lineaOccultans: { value: '5', enumerable: true },
+    seyame: { value: '6', enumerable: true }
+  })
+);
+
+const d = diacriticsByName;
+/**
  * Estrangela base/common diacritics (both western and eastern)
  * @constant
  * @type { string[] }
 */
 export const commonDiacritics = Object.freeze([
-  '2', // sedra/cal ' - Qushaya
-  '3', // sedra/cal , - Rukkakha
-  '5', // sedra/cal _ - Line under
-  '6' // sedra/cal * - Seyame
+  d.qushaya, // sedra/cal ' - Qushaya
+  d.rukkakha, // sedra/cal , - Rukkakha
+  d.lineaOccultans, // sedra/cal _ - Line under
+  d.seyame // sedra/cal * - Seyame
 ]);
 
 /**
@@ -411,24 +488,15 @@ export const endify = word => {
 };
 
 /**
+ * Return true if input word has vowels or diacritics
+ * @param { string } word input word
+ * @returns { boolean } true if word has vowels or diacritics
+ */
+export const isDotted = hasDotting(isDotting);
+
+/**
  * Remove dotting (vowels and diacritics), leaving consonantal word only.
  * @param { string } word input word to be processed
  * @returns { string } consonantal word
  */
-export const removeDotting = word => {
-  if (!word) {
-    return word;
-  }
-
-  let hasDotting = false;
-  const stack = [];
-  for (let i = 0, len = word.length; i < len; i++) {
-    const c = word.charAt(i);
-    if (isDotting(c) || isJoiner(c)) {
-      hasDotting = true;
-    } else {
-      stack.push(c);
-    }
-  }
-  return hasDotting ? stack.join('') : word;
-};
+export const removeDotting = clearDotting(isDotting);

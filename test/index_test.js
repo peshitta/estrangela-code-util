@@ -244,6 +244,17 @@ describe('Estrangela', () => {
     });
   });
 });
+describe('isDotted', () => {
+  const { isDotted } = sut;
+  it('Consonantal and vocalised isDotted', () => {
+    const empty = isDotted('');
+    const consonant = isDotted('dqsry0-dpylypws');
+    const vocalised = isDotted('dqesariya0-d2p#yilyipwOs');
+    test.strictEqual(empty, false, 'isDotted empty');
+    test.strictEqual(consonant, false, 'isDotted consonant only');
+    test.strictEqual(vocalised, true, 'isDotted vocalised');
+  });
+});
 describe('removeDotting', () => {
   const { removeDotting } = sut;
   it('Check consonantal and vocalised', () => {
@@ -259,7 +270,11 @@ describe('removeDotting', () => {
     const vocalised = removeDotting('leb39old2b3ab3eyk2w;J');
     const vocalisedExpected = wordExpected;
     test.strictEqual(word, wordExpected, 'removeDotting_wu consonant');
-    test.strictEqual(vocalised, vocalisedExpected, 'removeDotting_wu vocalised');
+    test.strictEqual(
+      vocalised,
+      vocalisedExpected,
+      'removeDotting_wu vocalised'
+    );
   });
   it('Check consonantal and vocalised', () => {
     const word = '0bhwhY';
@@ -274,7 +289,11 @@ describe('removeDotting', () => {
     const vocalised = removeDotting('l1eb39old2b3ab3eyk2w;J8');
     const vocalisedExpected = wordExpected;
     test.strictEqual(word, wordExpected, 'removeDotting_wu consonant');
-    test.strictEqual(vocalised, vocalisedExpected, 'removeDotting_wu vocalised');
+    test.strictEqual(
+      vocalised,
+      vocalisedExpected,
+      'removeDotting_wu vocalised'
+    );
   });
   it('Blank word returns blank', () => {
     const word = removeDotting('');

@@ -8,7 +8,7 @@ const isDev = process.env.BUILD === 'dev';
 const banner = isProduction
   ? '/**\n' +
     '* @file Estrangela ASCII code font utilities\n' +
-    '* @version 1.0.7\n' +
+    '* @version 1.0.8\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -41,7 +41,7 @@ const external = Object.keys(pkg.dependencies);
 const input = 'src/main.js';
 const name = 'estrangelaCodeUtil';
 const format = 'umd';
-const globals = {};
+const globals = { 'aramaic-mapper': 'aramaicMapper' };
 const sourcemap = !isProduction;
 const plugins = [buble()];
 
