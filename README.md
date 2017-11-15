@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/peshitta/estrangela-code-util.svg?branch=master)](https://travis-ci.org/peshitta/estrangela-code-util)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/peshitta/estrangela-code-util/blob/master/LICENSE)
 [![Dependency Status](https://david-dm.org/peshitta/estrangela-code-util.svg)](https://david-dm.org/peshitta/estrangela-code-util)
-[![devDependencies Status](https://david-dm.org/peshitta/estrangela-code-util/dev-status.svg)](https://david-dm.org/peshitta/estrangela-code-util?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/peshitta/estrangela-code-util/badge.svg?branch=master)](https://coveralls.io/github/peshitta/estrangela-code-util?branch=master)
+[![Gitter](https://badges.gitter.im/peshitta/peshitta.svg "Join the chat at https://gitter.im/peshitta/Lobby")](https://gitter.im/peshitta/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Estrangela ASCII code font utilities
 
@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.8.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.8.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.9.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.9.tgz)
 
 ## More information
 
@@ -49,7 +49,11 @@ You are welcomed to improve this implementation or provide feedback. Please
 feel free to [Fork](https://help.github.com/articles/fork-a-repo/), create a
 [Pull Request](https://help.github.com/articles/about-pull-requests/) or
 submit [Issues](https://github.com/peshitta/estrangela-code-util/issues).
-Thank you!
+
+To read quick updates about Peshitta app or post questions or feedback, follow
+[@peshittap](https://www.twitter.com/peshittap)
+at [![@peshittap](http://i.imgur.com/wWzX9uB.png "@peshittap")](https://www.twitter.com/peshittap)or
+[![Gitter](https://badges.gitter.im/peshitta/peshitta.svg "Join the chat at https://gitter.im/peshitta/Lobby")](https://gitter.im/peshitta/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Development
 
@@ -84,6 +88,7 @@ npm run build
     * [.allDiacritics](#module_estrangelaCodeUtil.allDiacritics) : <code>Array.&lt;string&gt;</code>
     * [.punctuation](#module_estrangelaCodeUtil.punctuation) : <code>Array.&lt;string&gt;</code>
     * [.joiners](#module_estrangelaCodeUtil.joiners) : <code>Array.&lt;string&gt;</code>
+    * [.letterAsciiMap](#module_estrangelaCodeUtil.letterAsciiMap) : <code>Object.&lt;string, string&gt;</code>
     * [.dotting](#module_estrangelaCodeUtil.dotting) : <code>Array.&lt;string&gt;</code>
     * [.isConsonant](#module_estrangelaCodeUtil.isConsonant) ⇒ <code>boolean</code>
     * [.isVowel](#module_estrangelaCodeUtil.isVowel) ⇒ <code>boolean</code>
@@ -96,6 +101,7 @@ npm run build
     * [.endify](#module_estrangelaCodeUtil.endify) ⇒ <code>string</code>
     * [.isDotted](#module_estrangelaCodeUtil.isDotted) ⇒ <code>boolean</code>
     * [.removeDotting](#module_estrangelaCodeUtil.removeDotting) ⇒ <code>string</code>
+    * [.sort](#module_estrangelaCodeUtil.sort) ⇒ <code>number</code>
 
 <a name="module_estrangelaCodeUtil.consonantsByName"></a>
 
@@ -225,6 +231,14 @@ Estrangela punctuation
 
 ### estrangelaCodeUtil.joiners : <code>Array.&lt;string&gt;</code>
 Estrangela joiners
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+<a name="module_estrangelaCodeUtil.letterAsciiMap"></a>
+
+### estrangelaCodeUtil.letterAsciiMap : <code>Object.&lt;string, string&gt;</code>
+Estrangela to ordinal ASCII value. Used for sorting:
+a b c d e f g h i j k l m n o p q r s t u v
+w x y z { | }
 
 **Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
 <a name="module_estrangelaCodeUtil.dotting"></a>
@@ -364,4 +378,17 @@ Remove dotting (vowels and diacritics), leaving consonantal word only.
 | Param | Type | Description |
 | --- | --- | --- |
 | word | <code>string</code> | input word to be processed |
+
+<a name="module_estrangelaCodeUtil.sort"></a>
+
+### estrangelaCodeUtil.sort ⇒ <code>number</code>
+Comparator function to be used for sorting Estrangela words
+
+**Kind**: static constant of [<code>estrangelaCodeUtil</code>](#module_estrangelaCodeUtil)  
+**Returns**: <code>number</code> - -1, 0, 1 depending on word sorting  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| word1 | <code>string</code> | first word to compare |
+| word2 | <code>string</code> | second word to compare |
 
