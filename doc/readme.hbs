@@ -25,7 +25,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.9.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.0.9.tgz)
+[https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.1.0.tgz](https://registry.npmjs.org/estrangela-code-util/-/estrangela-code-util-1.1.0.tgz)
 
 ## More information
 

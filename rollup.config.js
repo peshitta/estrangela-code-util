@@ -8,7 +8,7 @@ const isDev = process.env.BUILD === 'dev';
 const banner = isProduction
   ? '/**\n' +
     '* @file Estrangela ASCII code font utilities\n' +
-    '* @version 1.0.9\n' +
+    '* @version 1.1.0\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -49,13 +49,9 @@ const plugins = [buble()];
 const targets = [
   {
     input,
-    output: [{ file: pkg.main, format }],
+    output: [{ file: pkg.main, format, name, globals, banner, sourcemap }],
     external,
-    plugins: plugins.slice(0),
-    name,
-    globals,
-    banner,
-    sourcemap
+    plugins: plugins.slice(0)
   }
 ];
 
@@ -63,10 +59,9 @@ if (isProduction) {
   // ES module (for bundlers) build.
   targets.push({
     input,
-    output: [{ file: pkg.module, format: 'es' }],
+    output: [{ file: pkg.module, format: 'es', banner }],
     external,
-    plugins: plugins.slice(0),
-    banner
+    plugins: plugins.slice(0)
   });
 
   plugins.push(
@@ -83,12 +78,9 @@ if (isProduction) {
   // browser/nodejs-friendly minified UMD build
   targets.push({
     input,
-    output: [{ file: pkg.mainMin, format }],
+    output: [{ file: pkg.mainMin, format, name, globals, banner }],
     external,
-    plugins,
-    name,
-    globals,
-    banner
+    plugins
   });
 } else if (!isDev) {
   targets[0].plugins.push(
